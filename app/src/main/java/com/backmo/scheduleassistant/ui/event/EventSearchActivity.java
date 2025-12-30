@@ -28,31 +28,10 @@ public class EventSearchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_search);
-        repository = new ScheduleRepository(this);
-        EditText et = findViewById(R.id.et_query);
-        ListView lv = findViewById(R.id.lv_results);
-        adapter = new SimpleAdapter(this, data, android.R.layout.simple_list_item_2,
-                new String[]{"title", "sub"}, new int[]{android.R.id.text1, android.R.id.text2});
-        lv.setAdapter(adapter);
-        et.addTextChangedListener(new TextWatcher() {
-            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
-            @Override public void afterTextChanged(Editable s) {
-                String q = s.toString().trim();
-                repository.searchEvents(q).observe(EventSearchActivity.this, events -> {
-                    data.clear();
-                    for (EventEntity e : events) {
-                        Map<String, String> m = new HashMap<>();
-                        m.put("title", e.title);
-                        m.put("sub", fmt.format(new java.util.Date(e.startAt)));
-                        data.add(m);
-                    }
-                    adapter.notifyDataSetChanged();
-                });
-            }
-        });
+
+    }
+
+    private EditText findViewById(int etQuery) {
     }
 }
 

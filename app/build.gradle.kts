@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.backmo.scheduleassistant"
-    compileSdk = 36
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.backmo.scheduleassistant"
-        minSdk = 36
-        targetSdk = 36
+        minSdk = 24
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
