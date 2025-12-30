@@ -25,13 +25,7 @@ public class EventSearchActivity extends AppCompatActivity {
     private SimpleAdapter adapter;
     private List<Map<String, String>> data = new ArrayList<>();
     private final SimpleDateFormat fmt = new SimpleDateFormat("MM-dd HH:mm", Locale.getDefault());
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-    }
-
-    private EditText findViewById(int etQuery) {
-    }
 }
+
+
 
